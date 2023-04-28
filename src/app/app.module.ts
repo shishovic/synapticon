@@ -1,20 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DeviceParameterComponent } from './components/device-parameter/device-parameter.component';
+import { ParameterListComponent } from './components/parameter-list/parameter-list.component';
+import { ParameterService } from './services/parameter.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParameterListComponent,
+    DeviceParameterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
     RouterModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ParameterService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

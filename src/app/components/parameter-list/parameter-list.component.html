@@ -1,0 +1,12 @@
+<div>
+  <p>Parameter list</p>
+
+  <input placeholder="Device parameter ID" [(ngModel)]="parameterId" [value]="parameterId" />
+  <button (click)="getById()">Get</button>
+</div>
+
+Example parameter id: 0x2031:01.9500-02-0008895-1950
+
+<div *ngIf="deviceParameter">
+  <angie-device-parameter></angie-device-parameter>
+</div>

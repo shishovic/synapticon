@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DeviceListComponent } from './components/device-list/device-list.component';
+import { ParameterListComponent } from './components/parameter-list/parameter-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DeviceListComponent
+    component: ParameterListComponent
   }
 ]
 
