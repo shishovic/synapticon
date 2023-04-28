@@ -7,8 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DeviceParameterComponent } from './components/device-parameter/device-parameter.component';
 import { ParameterListComponent } from './components/parameter-list/parameter-list.component';
+import { DeviceParameterComponent } from './components/parameter-list/parameter/parameter.component';
 import { ParameterService } from './services/parameter.service';
 
 @NgModule({

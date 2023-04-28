@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets//fonts/Inter-Regular.ttf');
+}
+
+body {
+  font-family: 'Inter';
+}
+
+.example-text {
+  opacity: 0.6;
+  font-size: 14px;
+}

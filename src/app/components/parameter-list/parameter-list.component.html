@@ -1,12 +1,23 @@
-<div>
-  <p>Parameter list</p>
+<div class="col-md-12 col-lg-5">
+  <div class="card">
+    <div class="card-header fw-semibold">
+      Get Parameter by Id
+    </div>
+    <div class="card-body">
+      <div>
+        <label class="form-label" for="parameterId">Device parameter ID</label>
+        <input type="text" id="parameterId" class="form-control " placeholder="Device parameter ID"
+          [(ngModel)]="parameterId" [value]="parameterId" />
+      </div>
+      <p class="example-text mt-3">Example ID: 0x2031:01.9500-02-0008895-1950</p>
+    </div>
+    <div class="card-footer text-end">
+      <button type="submit" class="btn btn-primary text-end" (click)="getById()">Get parameter</button>
+    </div>
+  </div>
 
-  <input placeholder="Device parameter ID" [(ngModel)]="parameterId" [value]="parameterId" />
-  <button (click)="getById()">Get</button>
-</div>
-
-Example parameter id: 0x2031:01.9500-02-0008895-1950
-
-<div *ngIf="deviceParameter">
-  <angie-device-parameter></angie-device-parameter>
+  <h2 class="mt-4 mb-4">Parameters:</h2>
+  <div *ngIf="deviceParameter">
+    <angie-device-parameter [parameters]="deviceParameter" (update)="update($event)"></angie-device-parameter>
+  </div>
 </div>

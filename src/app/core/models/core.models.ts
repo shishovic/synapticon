@@ -1,4 +1,4 @@
-export type DeviceParameter = {
+export type DeviceParameters = {
   id: string;
   deviceId: string;
   name: string;
@@ -6,6 +6,8 @@ export type DeviceParameter = {
   value: ParameterValue;
   mandatory: boolean;
   access: ParameterAccess;
+  index: number;
+  subindex: number;
   min?: number;
   max?: number;
   unit?: string;

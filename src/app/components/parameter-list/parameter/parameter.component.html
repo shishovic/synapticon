@@ -1,0 +1,28 @@
+<ng-container *ngIf="!!parameter">
+  <div class="card">
+    <div class="card-header">
+      <span class="fw-semibold me-1">Name:</span>
+      <span>{{name}}</span>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-text fw-semibold">Value:</span>
+          <input class="form-control" [(ngModel)]="value" [disabled]="disabled" value="parameter.value"
+            [required]="required" />
+          <span class="input-group-text" *ngIf="parameter.unit">
+            <span class="fw-semibold me-1">Unit: </span>{{parameter.unit}}
+          </span>
+        </div>
+      </div>
+      <div class="mt-3" *ngIf="parameter.description">
+        <label for="paramDescription" class="form-label fw-semibold">Description:</label>
+        <div class="fst-italic" id="paramDescription" [innerHtml]="parameter.description"></div>
+      </div>
+    </div>
+    <div class="card-footer text-end">
+      <button type="submit" class="btn btn-primary" (click)="updateParameter()" [disabled]="disabled">Update
+        parameter</button>
+    </div>
+  </div>
+</ng-container>
