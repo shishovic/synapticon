@@ -1,4 +1,4 @@
-<div class="col-md-12 col-lg-5">
+<div class="mx-auto col-md-12 col-lg-8 mt-5">
   <div class="card">
     <div class="card-header fw-semibold">
       Get Parameter by Id
@@ -6,13 +6,12 @@
     <div class="card-body">
       <div>
         <label class="form-label" for="parameterId">Device parameter ID</label>
-        <input type="text" id="parameterId" class="form-control " placeholder="Device parameter ID"
-          [(ngModel)]="parameterId" [value]="parameterId" />
+        <input type="text" class="form-control" [formControl]="formControl">
       </div>
       <p class="example-text mt-3">Example ID: 0x2031:01.9500-02-0008895-1950</p>
     </div>
     <div class="card-footer text-end">
-      <button type="submit" class="btn btn-primary text-end" (click)="getById()">Get parameter</button>
+      <button type="submit" class="btn btn-sm btn-primary text-end" (click)="getById()">Get parameter</button>
     </div>
   </div>
 
