@@ -18,6 +18,8 @@ export type DeviceParameters = {
 export type KeyOf<T> = keyof T;
 export type ValueOf<T> = T[keyof T];
 
+export type ParamUpdateEventPayload = { value: ParameterValue, id: string };
+
 export type UpdateDeviceParameterDto = {
   value: ParameterValue
 }

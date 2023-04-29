@@ -7,13 +7,13 @@
     <div class="card-body">
       <div class="input-group">
         <span class="input-group-text fw-semibold">Value:</span>
-        <input type="text" class="form-control fs-6" [ngClass]="{'is-invalid': formControl.errors}"
+        <input type="text" class="form-control fs-6" [ngClass]="{'is-invalid': form.errors}"
           [formControl]="formControl">
         <span class="input-group-text">
           <span class="fw-semibold me-1">Unit: </span>{{parameter.unit || 'N/A'}}
         </span>
       </div>
-      <div class="invalid text-start">
+      <div class="invalid text-start ms-2">
         <div *ngFor="let e of getFormErrors()">
           <span>{{getErrorMessage(e)}}</span>
         </div>
@@ -25,8 +25,7 @@
     </div>
     <div class="card-footer text-end">
       <button type="submit" class="btn btn-sm btn-primary" (click)="updateParameter()"
-        [disabled]="formControl.disabled">Update
-        parameter</button>
+        [disabled]="form.disabled">Update</button>
     </div>
   </div>
 </ng-container>
