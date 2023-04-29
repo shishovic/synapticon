@@ -1,22 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'ngx-toastr/toastr';
+@import './overrides';
 
 @font-face {
   font-family: 'Inter';
-  src: url('./assets//fonts/Inter-Regular.ttf');
+  src: url('../fonts/Inter-Regular.ttf');
 }
 
 body {
   font-family: 'Inter';
-}
-
-.example-text {
-  opacity: 0.6;
-  font-size: 14px;
-}
-
-.invalid {
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 4px;
 }

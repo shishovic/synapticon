@@ -11,9 +11,9 @@ import { DeviceParameters, KeyOf, ParameterAccess, ParameterValue, ValueOf } fro
 })
 export class DeviceParameterComponent extends BaseComponent {
   formControl: FormControl = new FormControl('');
-  parameter?: DeviceParameters;
-
   name: string = '';
+
+  parameter?: DeviceParameters;
 
   @Output() update: EventEmitter<ParameterValue> = new EventEmitter<ParameterValue>();
 
@@ -32,24 +32,20 @@ export class DeviceParameterComponent extends BaseComponent {
     };
   }
 
-  public getErrors(prop: KeyOf<ValidationErrors>): ValueOf<ValidationErrors> {
-    return this.formControl.errors?.[prop]
+  public getFormErrors(): any[] {
+    return Object.keys(this.formControl.errors || {})
   }
 
-  public getAllErrors(): any[] {
-    return this.formControl.errors ? Object.keys(this.formControl.errors) : []
-  }
-
-  public getErrorMessage(error: KeyOf<ValidationErrors>): ValueOf<ValidationErrors> {
+  public getErrorMessage(e: KeyOf<ValidationErrors>): ValueOf<ValidationErrors> {
     const messages: ValidationErrors = {
       required: 'Value field is required',
-      min: 'Invalid minimum value',
-      max: 'Invalid maximum value'
+      min: `Invalid value. Minimum value must be more than ${this.parameter?.min}`,
+      max: `Invalid value.  Maximum value must be less or equal than ${this.parameter?.max}`
     };
-    return messages[error];
+    return messages[e];
   }
 
-  updateParameter(): void {
+  public updateParameter(): void {
     if (this.formControl.invalid) return;
 
     const isString = typeof this.parameter?.value === 'string';

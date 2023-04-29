@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParameterListComponent } from './components/parameter-list/parameter-list.component';
 import { DeviceParameterComponent } from './components/parameter-list/parameter/parameter.component';
+import { HeaderComponent } from './core/components/header/header.component';
 import { ParameterService } from './services/parameter.service';
 
 const TOASTR_CONFIG = {
@@ -23,7 +24,8 @@ const TOASTR_CONFIG = {
   declarations: [
     AppComponent,
     ParameterListComponent,
-    DeviceParameterComponent
+    DeviceParameterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

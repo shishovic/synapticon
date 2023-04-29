@@ -1,22 +1,27 @@
-<div class="mx-auto col-md-12 col-lg-8 mt-5">
-  <div class="card">
-    <div class="card-header fw-semibold">
-      Get Parameter by Id
-    </div>
-    <div class="card-body">
-      <div>
-        <label class="form-label" for="parameterId">Device parameter ID</label>
-        <input type="text" class="form-control" [formControl]="formControl">
+<div class="row justify-content-start">
+  <div class="col-md-12 col-lg-6 mt-5">
+    <!-- Get device parameter by ID -->
+    <div class="card">
+      <div class="card-body">
+        <label class="form-label fw-semibold" for="parameterId">Device parameter ID</label>
+        <input type="text" class="form-control fs-6" [formControl]="formControl">
       </div>
-      <p class="example-text mt-3">Example ID: 0x2031:01.9500-02-0008895-1950</p>
+      <div class="card-footer text-end">
+        <button type="submit" class="btn btn-sm btn-primary text-end"
+          (click)="getDeviceParamById(formControl.value)">Get parameter</button>
+      </div>
     </div>
-    <div class="card-footer text-end">
-      <button type="submit" class="btn btn-sm btn-primary text-end" (click)="getById()">Get parameter</button>
-    </div>
-  </div>
 
-  <h2 class="mt-4 mb-4">Parameters:</h2>
-  <div *ngIf="deviceParameter">
-    <angie-device-parameter [parameters]="deviceParameter" (update)="update($event)"></angie-device-parameter>
+
+    <!-- Device parameters list -->
+    <div *ngIf="deviceParameter; else noParameters">
+      <h6 class="mt-3 mb-3">Device parameters:</h6>
+      <angie-device-parameter [parameters]="deviceParameter" (update)="update($event)"></angie-device-parameter>
+    </div>
   </div>
 </div>
+
+<!-- No parameters text -->
+<ng-template #noParameters>
+  <p class="fs-6 fw-normal mt-3">No device parameters currently loaded...</p>
+</ng-template>
