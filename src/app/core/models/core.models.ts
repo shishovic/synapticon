@@ -18,6 +18,10 @@ export type DeviceParameters = {
 export type KeyOf<T> = keyof T;
 export type ValueOf<T> = T[keyof T];
 
+export type UpdateDeviceParameterDto = {
+  value: ParameterValue
+}
+
 export type Device = {
   id: string;
   name: string;
@@ -70,3 +74,4 @@ export enum ParameterAccess {
 export interface ParameterOptions {
   description: string;
 }
+
