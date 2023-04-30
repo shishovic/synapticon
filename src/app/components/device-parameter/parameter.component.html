@@ -1,0 +1,31 @@
+<ng-container *ngIf="!!parameter">
+  <div class="card">
+    <div class="card-header">
+      <span class="fw-semibold me-1">Name:</span>
+      <span>{{name}}</span>
+    </div>
+    <div class="card-body">
+      <div class="input-group">
+        <span class="input-group-text fw-semibold">Value:</span>
+        <input type="text" class="form-control fs-6" [ngClass]="{'is-invalid': form.errors}"
+          [formControl]="formControl">
+        <span class="input-group-text">
+          <span class="fw-semibold me-1">Unit: </span>{{parameter.unit || 'N/A'}}
+        </span>
+      </div>
+      <div class="invalid text-start ms-2">
+        <div *ngFor="let e of getFormErrors()">
+          <span>{{getErrorMessage(e)}}</span>
+        </div>
+      </div>
+      <div class="mt-3 description" *ngIf="parameter.description">
+        <label class="form-label fw-semibold">Description:</label>
+        <div class="fw-normal fs-6" [innerHtml]="parameter.description"></div>
+      </div>
+    </div>
+    <div class="card-footer text-end">
+      <button type="submit" class="btn btn-sm btn-primary" (click)="updateParameter()"
+        [disabled]="form.disabled">Update</button>
+    </div>
+  </div>
+</ng-container>
