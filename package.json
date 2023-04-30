@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "docker-start": "docker run --name oblac --rm -d -p3000:3000 synapticon/oblac-homework",
+    "docker-stop": "docker stop oblac"
   },
   "private": true,
   "dependencies": {
